@@ -98,6 +98,9 @@ public class Arvore<TIPO extends Comparable> {
                     }
                 }else{ //se não tem paiAtual, então é a raiz
                     this.raiz = substituto;
+                    paiSubstituto.setEsquerda(null);
+                    this.raiz.setDireita(paiSubstituto);
+                    this.raiz.setEsquerda(atual.getEsquerda());
                 }
                 
                 //removeu o elemento da árvore
